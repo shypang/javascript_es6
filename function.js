@@ -183,31 +183,27 @@ function calculate(command, a, b) {
   switch (command) {
     case "add":
       return a + b;
-      break;
     case "substract":
       if (a > b) {
         return a - b;
       } else {
         return b - a;
       }
-      break;
     case "divide":
       if (a > b) {
         return a / b;
       } else {
         return b / a;
       }
-      break;
     case "multiply":
       return a * b;
-      break;
     case "remainder":
       return a % b;
-      break;
     default:
+      throw Error("unkonwn command");
       console.log(
         "input command [add,  substract, divide, multiply, remainder]"
       );
-      break;
   }
 }
+console.log(calculate("add", 2, 3));
