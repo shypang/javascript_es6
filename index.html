@@ -1,0 +1,62 @@
+<!-- head + 
+<head></head>에 자바스크립트가 src로 불러올 경우 html이 불러오기전에 js파일이 용량이 많으면
+다운로드하는데 시간이 많이 걸림
+
+
+body + 
+<body></body>에 자바스크립트가 src로 불러올 경우 html이 다 불러지고 javascript 
+html콘텐츠는 빨리 보지만 js에 의존하는 사이트면 fetching과  executing하는데 시간이 걸려서 늦게 보게됨
+
+
+head + async 
+body 끝보다는 fetching하는 시간이 병렬적으로 진행되서 다운로드하는 시간이 절약되지만 
+html을 파싱하는 동안 자바스크립트도 실행되기 떄문에 자바스크립트에서 html요소를 dom으로 
+제어하려고 한다면 문제가 많아질 수밖에 없음.
+html을 파싱하는동안 js를 멈출수 있기때문에 사용자가 페이지를 보는데 오래걸릴수 밖에 없음
+
+
+
+
+head + defer 
+html을 파싱하는동안 js를 전부 페칭하고 페이지가 준비되면 defer에서 실행함
+
+<script defer src="a.js"></script>
+<script defer src="a.js"></script>
+<script defer src="a.js"></script>
+
+
+
+!!! 'use strict';  써야됨 자바스크립트는 유연한 언어라서. 상식적으로 사용하려면 이런식으로 배워야함
+
+// Whole-script strict mode syntax
+// Javascript is very flexible
+// flexible === dangerous
+// added ECMAScript 5
+"use strict"; //상식적인 범위 안에서 사용가능 
+console.log("hello world");
+
+
+
+
+cpu에 최소화된 연산
+메모리를 가장 적게 사용하는것
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script async src="variable.js"></script> -->
+    <!-- <script defer src="variable.js"></script> -->
+
+    <!-- <script src="operator.js"></script> -->
+    <script defer src="function.js"></script>
+  </head>
+  <body>
+    <div><!-- <script async src="variable.js"></script> --></div>
+  </body>
+</html>
