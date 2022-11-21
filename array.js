@@ -80,3 +80,4 @@ fruits.push("사과");
 console.log(fruits);
 console.log(fruits.indexOf("사과"));
 console.log(fruits.lastIndexOf("사과"));
+
