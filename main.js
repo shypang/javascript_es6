@@ -205,3 +205,4 @@ console.log([...new Set(array)]);
 //anime.js 경량 애니메이션 자바스크립트 프레임워크
 //rellax 스크롤별로 속도를 다르게 할 수 있음
 //greensock 난이도가 있는 애니메이션 라이브러리
+//추후시간있을 때 처리
